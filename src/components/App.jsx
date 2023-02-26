@@ -32,14 +32,14 @@ export class App extends Component {
 
     if (contactsList.findIndex(contact => name === contact.name) !== -1) {
       toast.warn(`${name} is already in contacts.`, {
-        position: "bottom-center",
-        autoClose: 1500,
+        position: 'top-right',
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
         draggable: true,
         progress: undefined,
-        theme: 'dark',
+        theme: 'light',
       });
     } else {
       contactsList.push({ id, name, number });
@@ -68,17 +68,33 @@ export class App extends Component {
 
     return (
       <div>
-        <h1>Phonebook</h1>
+        <h1
+          style={{
+            fontSize: 'xx-large',
+            textAlign: 'center',
+            marginTop: '90px',
+          }}
+        >
+          Phonebook
+        </h1>
         <ContactForm handleSubmit={this.handleSubmit} />
-        <h2>Contacts</h2>
+        <h2
+          style={{
+            textAlign: 'center',
+            fontSize: 'x-large',
+            marginTop: '40px',
+          }}
+        >
+          Contacts
+        </h2>
         <Filter filter={filter} handleChange={this.handleChange} />
         <ContactList
           contacts={this.getFilteredContacts()}
           handleDelete={this.handleDelete}
         />
-         <ToastContainer
-          position="bottom-center"
-          autoClose={1500}
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick
@@ -86,7 +102,7 @@ export class App extends Component {
           pauseOnFocusLoss
           draggable
           pauseOnHover={false}
-          theme="dark"
+          theme="light"
         />
       </div>
     );
