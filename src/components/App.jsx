@@ -82,7 +82,7 @@ export class App extends Component {
           style={{
             textAlign: 'center',
             fontSize: 'x-large',
-            marginTop: '40px',
+            marginTop: '5px',
           }}
         >
           Contacts
